@@ -1,5 +1,5 @@
 
---- user table
+
 CREATE TABLE USERS (
     USER_ID INT PRIMARY KEY,
     GENDER      NVARCHAR2(10),
@@ -14,7 +14,7 @@ CREATE TABLE USERS (
 DESCRIBE USERS;
 
 
----train table
+
 CREATE TABLE TRAIN (
     TRAIN_NO     INT PRIMARY KEY,
     CAPACITY     INT,
@@ -26,20 +26,20 @@ CREATE TABLE TRAIN (
 
 
 
----user_mobile_no table
+
 CREATE TABLE USER_MOBILE_NO (
     MOBILE_NO   NVARCHAR2(15),
     USER_ID     INT,
     CONSTRAINT fk_mobile_user FOREIGN KEY (USER_ID) REFERENCES USERS(USER_ID)
 );
 
---to see the global name
+
 SELECT GLOBAL_NAME FROM GLOBAL_NAME;
 GRANT CREATE SESSION
 TO RAIL;
  
 DESCRIBE TRAIN;
-----station table with fk train number from table train
+
 CREATE TABLE STATION (
     STATION_NO   NUMBER PRIMARY KEY,
     ARRIVAL_TIME VARCHAR2(50),
@@ -51,7 +51,7 @@ CREATE TABLE STATION (
 );
 
 
---- created table ticket with fk train no from table train & USER_ID FROM TABLE USERS
+
 CREATE TABLE TICKET (
     TICKET_ID       INT PRIMARY KEY,
     NO_OF_PASSENGER NVARCHAR2(20),
